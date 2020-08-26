@@ -15,7 +15,7 @@
     <File Build="2">views\memberlist.html</File>
     <File Build="2">views\memberview.pode</File>
     <File Build="2">views\memberview.pode.bak</File>
-    <File Build="2">views\membertable.pode</File>
+    <File Build="2">views\membertable.html</File>
     <File Build="2">public\images\baddy.png</File>
     <File Build="2">public\images\grassy.png</File>
     <File Build="2">public\images\swampy.png</File>
