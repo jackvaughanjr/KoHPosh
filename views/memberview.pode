@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/5146155b87.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <body>
+         <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Member</th>
+                        <th scope="col">Grasslands</th>
+                        <th scope="col">Badlands</th>
+                        <th scope="col">Swamp</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5</th>
+                        <th scope="col">6</th>
+                        <th scope="col">7</th>
+                        <th scope="col">8</th>
+                        <th scope="col">9</th>
+                        <th scope="col">10</th>
+                        <th scope="col">KAT VPs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    $(ForEach($katMember in $data.members) {
+                        "<tr>";
+                        "<th scope='row'>$($katMember.nickname)</th>";
+                        "<td>";
+                        $(If($katMember.grass) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.bads) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.swamp) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob4) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob5) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob6) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob7) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob8) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob9) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.mob10) { "<i class='fa fa-check'></i>"; })
+                        "</td>";
+                        "<td>";
+                        $(If($katMember.roles -contains 'KAT VPs') {
+                            "<i class='fa fa-check'></i>";
+                        })
+                        "</td>";
+                        "</tr>";
+                    })
+                </tbody>
+            </table>
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

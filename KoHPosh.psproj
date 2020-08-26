@@ -1,0 +1,19 @@
+﻿<Project Synchronized="False" SyncFilter="*.ps1;*.psm1;*.psd1;*.ps1xml;*.psf;*.pss;*.xml;*.help.txt">
+  <Version>2.1</Version>
+  <FileID>6c92876b-afc4-46e9-9ca0-ae980f43101a</FileID>
+  <ProjectType>2</ProjectType>
+  <Folders>
+    <Folder>views</Folder>
+  </Folders>
+  <Files>
+    <File Build="1">.gitignore</File>
+    <File Build="2" Shared="False">server.ps1</File>
+    <File Build="2">package.json</File>
+    <File Build="2">views\memberlist.html</File>
+    <File Build="2">views\memberview.pode</File>
+    <File Build="2">views\memberview.pode.bak</File>
+    <File Build="2">views\membertable.pode</File>
+  </Files>
+  <DeployMode>Project</DeployMode>
+  <PrimaryFile></PrimaryFile>
+</Project>
