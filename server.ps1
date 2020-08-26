@@ -17,7 +17,7 @@ Start-PodeServer {
     #Set-PodeViewEngine -Type Pode
     
     Add-PodeRoute -Method Get -Path '/members' -ScriptBlock {
-        $apiToken = 'NzQ3OTQ4MjAzNzY4NDE0MzA5.X0WTCw.5lajWuJXMBa37kD8BZGgFCkH2E8'
+        $apiToken = (Get-Secret -Name 'KoHDiscord' -AsPlainText)
         $apiHeader = @{
             "Authorization" = "Bot $apiToken"
             "User-Agent"    = "MadKatsKoH"
