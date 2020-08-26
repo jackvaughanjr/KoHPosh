@@ -14,7 +14,7 @@
 Start-PodeServer {
     Add-PodeEndpoint -Address * -Port 9001 -Protocol Http
     New-PodeLoggingMethod -Terminal | Enable-PodeErrorLogging -Levels @('Error', 'Warning', 'Informational', 'Verbose', 'Debug')
-    Set-PodeViewEngine -Type Pode
+    #Set-PodeViewEngine -Type Pode
     
     Add-PodeRoute -Method Get -Path '/members' -ScriptBlock {
         $apiToken = 'NzQ3OTQ4MjAzNzY4NDE0MzA5.X0WTCw.5lajWuJXMBa37kD8BZGgFCkH2E8'
