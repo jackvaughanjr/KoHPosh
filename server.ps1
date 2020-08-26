@@ -45,16 +45,18 @@ Start-PodeServer {
                 "deaf" = $member.deaf
                 "roles" = $roleList
             }
-            If ($output.roles -contains 'Mob Level 4') { $output.mob4 = $true }
-            If ($output.roles -contains 'Mob Level 5') { $output.mob5 = $true }
-            If ($output.roles -contains 'Mob Level 6') { $output.mob6 = $true }
-            If ($output.roles -contains 'Mob Level 7') { $output.mob7 = $true }
-            If ($output.roles -contains 'Mob Level 8') { $output.mob8 = $true }
-            If ($output.roles -contains 'Mob Level 9') { $output.mob9 = $true }
-            If ($output.roles -contains 'Mob Level 10') { $output.mob10 = $true }
-            If ($output.roles -contains 'Biome - Grasslands') { $output.grass = $true }
-            If ($output.roles -contains 'Biome - Badlands') { $output.bads = $true }
-            If ($output.roles -contains 'Biome - Swamp') { $output.swamp = $true }
+            If ($output.roles -contains 'Mob Level 4') { $output.mob = '<div class="mob04"></div>' }
+            If ($output.roles -contains 'Mob Level 5') { $output.mob = '<div class="mob05"></div>' }
+            If ($output.roles -contains 'Mob Level 6') { $output.mob = '<div class="mob06"></div>' }
+            If ($output.roles -contains 'Mob Level 7') { $output.mob = '<div class="mob07"></div>' }
+            If ($output.roles -contains 'Mob Level 8') { $output.mob = '<div class="mob08"></div>' }
+            If ($output.roles -contains 'Mob Level 9') { $output.mob = '<div class="mob09"></div>' }
+            If ($output.roles -contains 'Mob Level 10') { $output.mob = '<div class="mob10"></div>' }
+            If ($output.roles -contains 'Mob Level 11') { $output.mob = '<div class="mob11"></div>' }
+            If ($output.roles -contains 'Mob Level 12') { $output.mob = '<div class="mob12"></div>' }
+            If ($output.roles -contains 'Biome - Grasslands') { $output.biome = '<div class="grassy"></div>' }
+            If ($output.roles -contains 'Biome - Badlands') { $output.biome = '<div class="baddy"></div>' }
+            If ($output.roles -contains 'Biome - Swamp') { $output.biome = '<div class="swampy"></div>' }
             $output | Where-Object { $_.roles -contains 'KAT MEMBERS' }
         }
         Write-PodeJsonResponse -Value $memberRoles

@@ -4,6 +4,9 @@
   <ProjectType>2</ProjectType>
   <Folders>
     <Folder>views</Folder>
+    <Folder>public</Folder>
+    <Folder>public\images</Folder>
+    <Folder>public\styles</Folder>
   </Folders>
   <Files>
     <File Build="1">.gitignore</File>
@@ -13,6 +16,10 @@
     <File Build="2">views\memberview.pode</File>
     <File Build="2">views\memberview.pode.bak</File>
     <File Build="2">views\membertable.pode</File>
+    <File Build="2">public\images\baddy.png</File>
+    <File Build="2">public\images\grassy.png</File>
+    <File Build="2">public\images\swampy.png</File>
+    <File Build="2">public\styles\icons.css</File>
   </Files>
   <DeployMode>Project</DeployMode>
   <PrimaryFile></PrimaryFile>

@@ -1,0 +1,48 @@
+div.grassy {
+    max-width:100%;
+    content:url(/images/grassy.png);
+}
+div.baddy {
+    max-width:100%;
+    content:url(/images/baddy.png);
+}
+div.swampy {
+    max-width:100%;
+    content:url(/images/swampy.png);
+}
+div.mob04 {
+    max-width:100%;
+    content:url(/images/04.png);
+}
+div.mob05 {
+    max-width:100%;
+    content:url(/images/05.png);
+}
+div.mob06 {
+    max-width:100%;
+    content:url(/images/06.png);
+}
+div.mob07 {
+    max-width:100%;
+    content:url(/images/07.png);
+}
+div.mob08 {
+    max-width:100%;
+    content:url(/images/08.png);
+}
+div.mob09 {
+    max-width:100%;
+    content:url(/images/09.png);
+}
+div.mob10 {
+    max-width:100%;
+    content:url(/images/010.png);
+}
+div.mob11 {
+    max-width:100%;
+    content:url(/images/011.png);
+}
+div.mob12 {
+    max-width:100%;
+    content:url(/images/012.png);
+}
