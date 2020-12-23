@@ -16,7 +16,7 @@ Install-Module -Name Pode -RequiredVersion 1.8.2
 ```powershell
 Install-Module -Name Microsoft.PowerShell.SecretManagement -AllowPrerelease
 ```
----
+
 ## Configuration Required
 
 ### Web Server
