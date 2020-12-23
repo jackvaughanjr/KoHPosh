@@ -6,54 +6,117 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/5146155b87.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.css">
         <link rel="stylesheet" href="/styles/icons.css">
+        <script src="https://kit.fontawesome.com/62b8eb4d4f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-    <div class="buttons-toolbar"></div>
-    <table
-        id="table"
-        data-toggle="table"
-        data-height="100%"
-        data-buttons-align="left"
-        data-formatter="detailFormatter"
-        data-show-button-icons="true"
-        data-show-refresh="true"
-        data-search="true"
-        data-sort-name="nickname"
-        data-url="https://heckinkats.ngrok.io/members">
-        <thead>
-            <tr>
-                <th data-sortable="true" data-field="nickname" data-formatter="nameFormatter">Name</th>
-                <th data-sortable="true" data-align="center" data-width="100" data-width-unit="px" data-field="biome">Biome</th>
-                <th data-sortable="true" data-align="center" data-width="100" data-width-unit="px" data-field="mob" data-formatter="mobFormatter">Max Mob</th>
-                <th data-sortable="true" data-align="center" data-width="100" data-width-unit="px" data-field="th" data-formatter="thlevelFormatter">Town Hall</th>
-            </tr>
-        </thead>
-    </table>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
-    <script>
-        function detailFormatter(index, row) {
-            var html = []
-            $.each(row, function (key, value) {
-              html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+        <div id="toolbar">
+            <button id="buttonShrineShow" class="btn btn-secondary">Show Shrine Team</button>
+            <button id="buttonShrineHide" class="btn btn-secondary" style="display: none;">Hide Shrine Team</button>
+            <button id="buttonRaidDragsShow" class="btn btn-secondary">Show Raid Dragon Levels</button>
+            <button id="buttonRaidDragsHide" class="btn btn-secondary" style="display: none;">Hide Raid Dragon Levels</button>
+        </div>
+        <table
+            id="table"
+            data-toggle="table"
+            data-toolbar="#toolbar"
+            data-height="100%"
+            data-buttons-align="right"
+            data-formatter="detailFormatter"
+            data-show-button-icons="true"
+            data-show-toggle="true"
+            data-show-refresh="true"
+            data-show-columns="true"
+            data-search="true"
+            data-sort-name="nickname"
+            data-sticky-header="true"
+            data-url="https://heckinkats.ngrok.io/members">
+            <thead>
+                <tr>
+                    <th rowspan="3" data-sortable="true" data-field="nickname" data-formatter="nameFormatter" data-width="40" data-width-unit="%">Name</th>
+                    <th rowspan="3" class="p-0" data-sortable="true" data-align="center" data-width="5" data-width-unit="%" data-field="biomediv" data-formatter="biomeFormatter">Biome</th>
+                    <th rowspan="3" class="p-0" data-visible="false" data-sortable="true" data-align="center" data-width="5" data-width-unit="%" data-field="shrinediv" data-formatter="biomeFormatter">Shrine<br />Team</th>
+                    <th rowspan="3" data-sortable="true" data-align="center" data-width="10" data-width-unit="%" data-field="mob" data-formatter="mobFormatter">Max Mob</th>
+                    <th rowspan="3" data-sortable="true" data-align="center" data-width="10" data-width-unit="%" data-field="th" data-formatter="thlevelFormatter">Town Hall</th>
+                    <th colspan="6">Raid</th>
+                    <th rowspan="3" data-sortable="true" data-align="center" data-width="3" data-width-unit="%" data-field="accepted" data-formatter="biomeFormatter">AP</th>
+                </tr>
+                <tr>
+                    <th rowspan="2" data-visible="false" data-sortable="true" data-align="center" data-width="7" data-width-unit="%" data-field="smaak" data-formatter="smaakFormatter">Smaak</th>
+                    <th rowspan="2" data-visible="false" data-sortable="true" data-align="center" data-width="7" data-width-unit="%" data-field="gourdon" data-formatter="smaakFormatter">Gourdon</th>
+                    <th rowspan="2" data-sortable="true" data-align="center" data-width="7" data-width-unit="%" data-field="gather" data-formatter="smaakFormatter">Gather Bonus</th>
+                    <th colspan="3">Hydra 2</th>
+                </tr>
+                <tr>
+                    <th data-sortable="true" data-align="center" data-width="2" data-width-unit="%" data-field="h2grass" data-formatter="smaakFormatter">G</th>
+                    <th data-sortable="true" data-align="center" data-width="2" data-width-unit="%" data-field="h2bad" data-formatter="smaakFormatter">B</th>
+                    <th data-sortable="true" data-align="center" data-width="2" data-width-unit="%" data-field="h2swamp" data-formatter="smaakFormatter">S</th>
+                </tr>
+            </thead>
+        </table>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+        <script>
+            function detailFormatter(index, row) {
+                var html = []
+                $.each(row, function (key, value) {
+                html.push('<p><b>' + key + ':</b> ' + value + '</p>') 
+                })
+                return html.join('')
+            }
+            function nameFormatter(value) {
+                return '<div class="name text-responsive">' + value + '</div>'
+            }
+            function biomeFormatter(value) {
+                return '<div class="p-0">' + value + '</div>'
+            }
+            function mobFormatter(value) {
+                return '<div class="p-0 mob">' + value + '</div>'
+            }
+            function thlevelFormatter(value) {
+                return '<div class="thlevel">' + value + '</div>'
+            }
+            function smaakFormatter(value) {
+                return '<div class="p-0 mob">' + value + '</div>'
+            }
+        </script>
+        <script>
+            var $table = $('#table')
+            var $shrineButtonShow = $('#buttonShrineShow')
+            var $shrineButtonHide = $('#buttonShrineHide')
+            var $raidDragsButtonShow = $('#buttonRaidDragsShow')
+            var $raidDragsButtonHide = $('#buttonRaidDragsHide')
+            $(function() {
+                $shrineButtonShow.click(function () {
+                    $table.bootstrapTable('showColumn', 'shrinediv')
+                    $shrineButtonShow.toggle()
+                    $shrineButtonHide.toggle()
+                })
+                $shrineButtonHide.click(function () {
+                    $table.bootstrapTable('hideColumn', 'shrinediv')
+                    $shrineButtonShow.toggle()
+                    $shrineButtonHide.toggle()
+                })
+                $raidDragsButtonShow.click(function () {
+                    $table.bootstrapTable('showColumn', 'smaak')
+                    $table.bootstrapTable('showColumn', 'gourdon')
+                    $raidDragsButtonShow.toggle()
+                    $raidDragsButtonHide.toggle()
+                })
+                $raidDragsButtonHide.click(function () {
+                    $table.bootstrapTable('hideColumn', 'smaak')
+                    $table.bootstrapTable('hideColumn', 'gourdon')
+                    $raidDragsButtonShow.toggle()
+                    $raidDragsButtonHide.toggle()
+                })
             })
-            return html.join('')
-        }
-        function nameFormatter(value) {
-            return '<div class="name">' + value + '</div>'
-        }
-        function mobFormatter(value) {
-            return '<div class="mob">' + value + '</div>'
-        }
-        function thlevelFormatter(value) {
-            return '<div class="thlevel">' + value + '</div>'
-        }
-    </script>
-  </body>
+        </script>
+    </body>
 </html>    

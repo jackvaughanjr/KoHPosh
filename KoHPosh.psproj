@@ -7,6 +7,7 @@
     <Folder>public</Folder>
     <Folder>public\images</Folder>
     <Folder>public\styles</Folder>
+    <Folder>private</Folder>
   </Folders>
   <Files>
     <File Build="1">.gitignore</File>
