@@ -15,8 +15,12 @@
 
 Start-PodeServer {
     Add-PodeEndpoint -Address heckinkats.ngrok.io -Port 9001 -Protocol Http
+    ### FOR TESTING LOCALLY
+    # Add-PodeEndpoint -Address * -Port 9001 -Protocol Http
     New-PodeLoggingMethod -Terminal | Enable-PodeErrorLogging -Levels @('Error', 'Warning', 'Informational', 'Verbose', 'Debug')
     #Set-PodeViewEngine -Type Pode
+    
+    
     
     Add-PodeRoute -Method Get -Path '/members' -ScriptBlock {
         $apiToken = (Get-Secret -Name 'KoHDiscord' -AsPlainText)
